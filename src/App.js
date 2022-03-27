@@ -1,40 +1,43 @@
-import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import React from "react";
+import { BrowserRouter as Router, Route, Routes, Redirect } from "react-router-dom";
 import "./App.css";
 import Login from "./Comps/Login";
 import Cadastro from "./Comps/Cadastro";
 import Listagem from "./Comps/Listagem";
 
 class App extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       usuario: "",
       senha: ""
     };
   }
 
-  enviarDadosLogin = () => {};
+  // metLogin(){
+  //   this.setState({
+  //     usuario: props_user,
+  //     senha:   props_senha
+  //   })
+  // }
 
   render() {
     return (
       <div className="App">
         <Router>
           <Routes>
-            <Route
-              path="/"
-              element={
-                <Login usuario={this.state.usuario} senha={this.state.senha} />
+            <Route path="*" element={
+              <Login metodo={this.metLogin} />
               }
             />
-            <Route
-              path="/login"
-              element={
-                <Login usuario={this.state.usuario} senha={this.state.senha} />
+            <Route path="/cadastro" element={
+              <Cadastro />
               }
             />
-            <Route path="/cadastro" element={<Cadastro />} />
-            <Route path="/listagem" element={<Listagem />} />
+            <Route path="/listagem" element={
+              <Listagem />
+              }
+            />
           </Routes>
         </Router>
       </div>
