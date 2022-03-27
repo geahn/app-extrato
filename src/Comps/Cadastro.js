@@ -47,9 +47,9 @@ class Cadastro extends React.Component{
         }
         else {
             let elemento = document.getElementById('msgerro');
-            elemento.className = "msgerro"
+            elemento.className = "msgerro";
             
-            e.preventDefault()
+            e.preventDefault();
         }
 
         
