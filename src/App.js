@@ -4,6 +4,7 @@ import "./App.css";
 import Login from "./Comps/Login";
 import Cadastro from "./Comps/Cadastro";
 import Listagem from "./Comps/Listagem";
+import Lottie from "./Comps/Splash";
 
 class App extends React.Component {
   constructor() {
@@ -21,12 +22,7 @@ class App extends React.Component {
       <div className="App">
         <Router>
           <Routes>
-            <Route
-              path="/"
-              element={
-                <Login usuario={this.state.usuario} senha={this.state.senha} />
-              }
-            />
+            <Route path="/" element={<Splash />} />
             <Route
               path="/login"
               element={
