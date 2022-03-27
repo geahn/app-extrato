@@ -76,16 +76,27 @@ hr {
   background: linear-gradient(40deg, rgba(12,74,151,1) 0%, rgba(0,135,111,1) 50%, rgba(79,181,72,1) 100%);
 }
 
-#lottie{
+lottie-player{
   background: #0c4a97;
-background: linear-gradient(40deg, rgba(12,74,151,1) 0%, rgba(0,135,111,1) 50%, rgba(79,181,72,1) 100%);
-  width:100%;
-  height:100%;
+  background: linear-gradient(40deg, rgba(12,74,151,1) 0%, rgba(0,135,111,1) 50%, rgba(79,181,72,1) 100%);
   display:block;
   overflow: hidden;
   transform: translate3d(0,0,0);
   text-align: center;
-  opacity: 1;
+  opacity: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  animation-name: lottieplayer;
+  animation-duration: 5.5s;
+}
+
+@keyframes lottieplayer {
+  0%   {opacity:1; z-index:99}
+  85%  {opacity:1; z-index:99}
+  99%  {opacity:0; z-index:99}
+  100%  {display:none; z-index:-1}
 }
 
 .card {
