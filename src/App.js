@@ -25,7 +25,9 @@ class App extends React.Component {
         <Router>
           <Routes>
             <Route path='/'
-                  element={<Splash />
+                  element={<Login
+                    usuario={this.state.usuario}
+                    senha={this.state.senha} />
                     }/>
             <Route path='/login'
                   element={<Login
