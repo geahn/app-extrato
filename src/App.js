@@ -4,7 +4,7 @@ import "./App.css";
 import Login from "./Comps/Login";
 import Cadastro from "./Comps/Cadastro";
 import Listagem from "./Comps/Listagem";
-import Lottie from "./Comps/Splash";
+import Splash from "./Comps/Splash";
 
 class App extends React.Component {
   constructor() {
