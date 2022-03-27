@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 class Cadastro extends React.Component{
     constructor(props) {
