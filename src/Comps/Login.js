@@ -30,9 +30,6 @@ class Login extends React.Component {
   };
 
   render() {
-    console.log("Usuário Cadastrado: ", this.props.usuario);
-    console.log("Senha Cadastrada: ", this.props.senha);
-
     return (
       <div className="boxed auth-tela">
         <div className="logoapp m4"></div>

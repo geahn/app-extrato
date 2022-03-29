@@ -52,7 +52,7 @@ class Cadastro extends React.Component {
           <div className="msgsucesso hide" id="msgsucesso">
             Usuário cadastrado com sucesso!
           </div>
-          <form onSubmit={this.aoEnviar} action="/" method="post">
+          <form onSubmit={this.aoEnviar} action="/">
             <div className="inputicon">
               <ion-icon name="person"></ion-icon>
               <input

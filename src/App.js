@@ -16,11 +16,9 @@ class App extends React.Component {
 
   metodoCadastro = (e) => {
     this.setState({
-      usuario: this.props.usuario,
-      senha: this.props.senha
+      usuario: this.state.usuario,
+      senha: this.state.senha
     });
-
-    alert(this.props.usuario);
   };
 
   render() {
