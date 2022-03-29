@@ -14,12 +14,12 @@ class App extends React.Component {
     };
   }
 
-  metodoCadastro = (e) => {
+  metodoCadastro = (usuario, senha) => {
     this.setState({
-      usuario: this.state.usuario,
-      senha: this.state.senha
-    });
-  };
+      usuario: usuario,
+      senha: senha
+    })
+  }
 
   render() {
     return (
