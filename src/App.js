@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Login from "./Comps/Login";
 import Cadastro from "./Comps/Cadastro";
@@ -14,30 +14,30 @@ class App extends React.Component {
     };
   }
 
-  // metLogin(){
-  //   this.setState({
-  //     usuario: props_user,
-  //     senha:   props_senha
-  //   })
-  // }
+  metodoCadastro = (e) => {
+    this.setState({
+      usuario: this.state.usuario,
+      senha: this.state.senha
+    });
+    alert("Usuario: " + this.state.usuario);
+  };
 
   render() {
     return (
       <div className="App">
         <Router>
           <Routes>
-            <Route path="*" element={
-              <Login metodo={this.metLogin} />
+            <Route
+              path="/"
+              element={
+                <Login usuario={this.state.usuario} senha={this.state.senha} />
               }
             />
-            <Route path="/cadastro" element={
-              <Cadastro />
-              }
+            <Route
+              path="/cadastro"
+              element={<Cadastro metodo={this.metodoCadastro} />}
             />
-            <Route path="/listagem" element={
-              <Listagem />
-              }
-            />
+            <Route path="/listagem" element={<Listagem />} />
           </Routes>
         </Router>
       </div>

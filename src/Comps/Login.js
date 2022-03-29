@@ -1,10 +1,12 @@
-import React, { Component } from "react";
-import { useHistory } from "react-router-dom";
+import React from "react";
+//import { useHistory } from "react-router-dom";
 
 class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      usuario: this.props.usuario,
+      senha: this.props.senha,
       usuario_login: "",
       senha_login: ""
     };
@@ -19,20 +21,24 @@ class Login extends React.Component {
   };
 
   aoEnviar = (e) => {
-    console.log("Usuário Cadastrado: ", this.state.usuario);
-    console.log("Senha Cadastrada: ", this.state.senha);
+    console.log("Usuário Cadastrado: ", this.props.usuario);
+    console.log("Senha Cadastrada: ", this.props.senha);
     console.log("Usuário do Login: ", this.state.usuario_login);
     console.log("Senha do Login: ", this.state.senha_login);
+
     e.preventDefault();
   };
 
   render() {
+    console.log("Usuário Cadastrado: ", this.props.usuario);
+    console.log("Senha Cadastrada: ", this.props.senha);
+
     return (
       <div className="boxed auth-tela">
         <div className="logoapp m4"></div>
         <div className="card card-mini m4">
           <div className="linksauth">
-            <a href="/login" className="selectauth">
+            <a href="/" className="selectauth">
               Login
             </a>
             <a href="/cadastro">Cadastro</a>
