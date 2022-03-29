@@ -19,6 +19,8 @@ class App extends React.Component {
       usuario: this.props.usuario,
       senha: this.props.senha
     });
+
+    alert(this.props.usuario);
   };
 
   render() {
