@@ -19,7 +19,6 @@ class App extends React.Component {
       usuario: this.props.usuario,
       senha: this.props.senha
     });
-    alert("Usuario: " + this.state.usuario);
   };
 
   render() {
