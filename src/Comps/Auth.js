@@ -81,17 +81,15 @@ class Auth extends React.Component {
     };
 
     aoEnviarLogin = (e) => {
-        console.log("Usuário Cadastrado: ", this.state.usuario_cadastro);
-        console.log("Senha Cadastrada: ", this.state.senha_cadastro);
-        console.log("Usuário do Login: ", this.state.usuario_login);
-        console.log("Senha do Login: ", this.state.senha_login);
-
         if (this.state.usuario_cadastro === this.state.usuario_login &&
             this.state.usuario_cadastro === this.state.usuario_login) {
                 window.location = "/listagem";
-            }
+            } else {
+                let elemento = document.getElementById("msgerroLogin");
+                elemento.className = "msgerro";
 
-        e.preventDefault();
+                e.preventDefault();
+            }
     };
 
     render(){
@@ -114,6 +112,10 @@ class Auth extends React.Component {
 
                         <div className="msgsucesso hide" id="msgsucesso">
                             Usuário cadastrado com sucesso!
+                        </div>
+
+                        <div className="msgsucesso hide" id="msgerroLogin">
+                            Usuário ou senha não encontrados!
                         </div>
 
                         <div className="inputicon">
@@ -177,7 +179,7 @@ class Auth extends React.Component {
                         </div>
 
                         <button type="submit" onClick={this.aoEnviarCadastro}>
-                        Entrar <ion-icon name="enter"></ion-icon>
+                        Cadastrar <ion-icon name="add-circle-sharp"></ion-icon>
                         </button>
                     </div>
 
