@@ -1,4 +1,5 @@
 import React from "react";
+import Menu from "./Menu"
 
 class Listagem extends React.Component{
     constructor() {
@@ -42,31 +43,31 @@ class Listagem extends React.Component{
     }
 
     converterMoeda = (e) => {
-        return e.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
+        return e.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+    }
+
+    estiloPosNeg = (e) => {
+        if (e >= 0)
+            return "valorpositivo";
+        else
+            return "valornegativo"
     }
 
     render(){
-
         const valorTotal=(this.state.entradas.reduce((extrato,currentItem) =>  extrato = extrato + currentItem.valor , 0 ));
 
-        const mapaExtrato = this.state.entradas.map((mapa) =>
-            <div>
+        const mapaExtrato = this.state.entradas.map((mapa, index) =>
+            <div key={index}>
                 <p><b>Horário:</b> {mapa.horario}</p>
                 <p><b>Descrição:</b> {mapa.horario}</p>
-                <p><b>Valor:</b> {this.converterMoeda(mapa.valor)}</p>
+                <p><b>Valor:</b> <b className={this.estiloPosNeg(mapa.valor)}> {this.converterMoeda(mapa.valor)}</b></p>
                 <hr />
                 <hr />
             </div>)
 
         return(
             <div>
-                <nav>
-                    <ion-icon size="large" name="menu-sharp"></ion-icon>
-                    <div className="valortotal">
-                        <span>Saldo:</span><span>{this.converterMoeda(valorTotal)}</span>
-                        <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-                </nav>
+                <Menu valortotal={this.converterMoeda(valorTotal)}/>
 
                 <div>
                     {mapaExtrato}    

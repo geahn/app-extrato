@@ -292,6 +292,30 @@ nav {
   display: inline-block;
 }
 
+.valorpositivo {
+  color:#24ac5d;
+}
+
+.valornegativo {
+  color:#dd4955;
+}
+
+#meumenu {
+  position: fixed;
+  top: 0;
+  left: -320px;
+  width: 320px;
+  height: 100vh;
+  background: #0c4a97;
+  background: linear-gradient(
+    40deg,
+    rgba(12, 74, 151, 1) 0%,
+    rgba(0, 135, 111, 1) 50%,
+    rgba(79, 181, 72, 1) 100%
+  );
+  z-index: 99;
+}
+
 .rodape {
   width: 100%;
   position: fixed;
