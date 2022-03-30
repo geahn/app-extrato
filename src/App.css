@@ -169,13 +169,30 @@ lottie-player {
   margin: 0 auto;
 }
 
-.linksauth a {
+/* .linksauth a {
   color: #000;
   margin: 0 15px;
   padding: 5px 0;
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 600;
+} */
+
+.linksauth {  
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: -7px;
+}
+
+.linksauth span {
+  width:100%;
+  color: #000;
+  margin: 0 15px;
+  padding: 5px 0;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor:pointer;
 }
 
 .selectauth {
@@ -246,6 +263,10 @@ button[type="Submit"] ion-icon {
   padding: 10px 5px;
   border-radius: 5px;
   margin: 4px;
+}
+
+.show {
+  display: initial;
 }
 
 .hide {
