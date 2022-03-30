@@ -4,8 +4,7 @@ import Menu from "./Menu"
 class Listagem extends React.Component{
     constructor() {
         super();
-        this.state = {
-            entradas: [
+        this.state = { entradas: [
             {
             desc: "Capital de Giro",
             horario: this.definirDataHora(),
