@@ -82,7 +82,7 @@ class Auth extends React.Component {
 
     aoEnviarLogin = (e) => {
         if (this.state.usuario_cadastro === this.state.usuario_login &&
-            this.state.usuario_cadastro === this.state.usuario_login) {
+            this.state.senha_cadastro === this.state.senha_login) {
                 window.location = "/listagem";
             } else {
                 let elemento = document.getElementById("msgerroLogin");
