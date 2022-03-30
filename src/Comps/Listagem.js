@@ -78,8 +78,6 @@ class Listagem extends React.Component{
                     </table>
                 </div>
 
-                <p><b>Criei algumas entradas fictícias na state para ter um saldo disponível por padrão</b></p>
-
             </div>
         )
     }
