@@ -63,6 +63,7 @@ hr {
 }
 
 .boxed {
+  position:relative;
   width: calc(100% - 60px);
   margin: 15px;
   padding: 15px;
@@ -167,6 +168,16 @@ lottie-player {
   height: 88px;
   display: block;
   margin: 0 auto;
+}
+
+.logomini {
+  width: 150px;
+  height: 40px;
+  margin-left: 10px;
+  display: inline-block;
+  position: absolute;
+  top: 7px;
+  left: 35px;
 }
 
 /* .linksauth a {
@@ -274,19 +285,43 @@ button[type="Submit"] ion-icon {
 }
 
 nav {
-  position:relative;
+  position: fixed;
+  top: 0;
   text-align: left;
+  width: calc(100% - 20px);
   padding: 10px;
-  background: var(--maintxt);
   margin-bottom: 20px;
+  background: #0c4a97;
+  background: linear-gradient( 40deg, rgba(12, 74, 151, 1) 0%, rgba(0, 135, 111, 1) 50%, rgba(79, 181, 72, 1) 100% );
+}
+
+table {
+  border-collapse: collapse;
+  width: calc(100% - 20px);
+  max-width: 1080px;
+  margin: 70px auto 10px;
+}
+
+td, th {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+tr:nth-child(even){background-color: #f5f5f5;}
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
 }
 
 .valortotal {
   position:absolute;
   right:10px;
   top:8px;
-  background:var(--main);
-  color:var(--maintxt);
+  background:white;
+  color:var(--main);
+  font-size:14px;
   padding:10px 15px;
   border-radius:30px;
   display: inline-block;
@@ -303,7 +338,7 @@ nav {
 #meumenu {
   position: fixed;
   top: 0;
-  left: -320px;
+  left: -350px;
   width: 320px;
   height: 100vh;
   background: #0c4a97;
@@ -313,7 +348,79 @@ nav {
     rgba(0, 135, 111, 1) 50%,
     rgba(79, 181, 72, 1) 100%
   );
+  box-shadow: 5px 0 20px rgb(0 0 0 / 20%);
+  transition: left .7s;
   z-index: 99;
+}
+
+#menuhamb {
+  color:white;
+}
+
+#xfechar {
+  color:white;
+  position: absolute;
+  right: 15px;
+  top: -5px;
+  transition: left .7s;
+}
+
+.menusaldo {
+  color:white;
+  padding:15px 20px;
+  width:calc(100% - 40px);
+  border:3px solid white;
+  border-radius:50px;
+  text-align: center;
+  font-size:11px;
+  margin:30px auto 15px;
+  display:block;
+}
+
+.menusaldo b{
+  font-size:18px;
+}
+
+.btmenu {
+  display:flex;
+}
+
+.btmenu button ion-icon {
+  display: block;
+  margin: 0 auto;
+  font-size: 45px;
+  margin-bottom: 10px;
+  color: #0c4c96;
+}
+
+.btmenu button {
+  border-radius: 10px;
+  border: 0;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  background: white;
+  margin: 5px;
+  padding: 10px;
+}
+
+.sair {
+  color: #0b4b96;
+  background: white;
+  position: absolute;
+  bottom: 65px;
+  left: 40%;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 7px;
+}
+
+.sair ion-icon {
+  position: relative;
+  top:2px;
 }
 
 .rodape {

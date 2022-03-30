@@ -57,20 +57,25 @@ class Listagem extends React.Component{
         const valorTotal=(this.state.entradas.reduce((extrato,currentItem) =>  extrato = extrato + currentItem.valor , 0 ));
 
         const mapaExtrato = this.state.entradas.map((mapa, index) =>
-            <div key={index}>
-                <p><b>Horário:</b> {mapa.horario}</p>
-                <p><b>Descrição:</b> {mapa.horario}</p>
-                <p><b>Valor:</b> <b className={this.estiloPosNeg(mapa.valor)}> {this.converterMoeda(mapa.valor)}</b></p>
-                <hr />
-                <hr />
-            </div>)
+            <tr key={index}>
+                <td>{mapa.horario}</td>
+                <td>{mapa.desc}</td>
+                <td><b className={this.estiloPosNeg(mapa.valor)}> {this.converterMoeda(mapa.valor)}</b></td>
+            </tr>)
 
         return(
             <div>
                 <Menu valortotal={this.converterMoeda(valorTotal)}/>
 
                 <div>
-                    {mapaExtrato}    
+                    <table border="0">
+                        <tr>
+                            <td><b>Horário</b></td>
+                            <td><b>Descrição</b></td>
+                            <td><b>Valor</b></td>
+                        </tr>
+                        {mapaExtrato}    
+                    </table>
                 </div>
 
                 <p><b>Criei algumas entradas fictícias na state para ter um saldo disponível por padrão</b></p>
