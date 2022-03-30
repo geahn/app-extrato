@@ -13,6 +13,10 @@ class Listagem extends React.Component{
             desc: "Devoluções",
             horario: this.definirDataHora(),
             valor: 480.60
+            },{
+            desc: "Gastos com Remédios",
+            horario: this.definirDataHora(),
+            valor: -22.17
             }
             ]
         }
@@ -57,16 +61,19 @@ class Listagem extends React.Component{
         return(
             <div>
                 <nav>
-                    <ion-icon name="menu-sharp"></ion-icon>
+                    <ion-icon size="large" name="menu-sharp"></ion-icon>
+                    <div className="valortotal">
+                        <span>Saldo:</span><span>{this.converterMoeda(valorTotal)}</span>
+                        <ion-icon name="eye-outline"></ion-icon>
+                    </div>
                 </nav>
-                <div className="valortotal">
-                    <span>Saldo:</span><span>{this.converterMoeda(valorTotal)}</span>
-                    <ion-icon name="eye-outline"></ion-icon>
-                </div>
 
                 <div>
                     {mapaExtrato}    
                 </div>
+
+                <p><b>Criei algumas entradas fictícias na state para ter um saldo disponível por padrão</b></p>
+
             </div>
         )
     }

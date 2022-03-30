@@ -273,6 +273,25 @@ button[type="Submit"] ion-icon {
   display: none;
 }
 
+nav {
+  position:relative;
+  text-align: left;
+  padding: 10px;
+  background: var(--maintxt);
+  margin-bottom: 20px;
+}
+
+.valortotal {
+  position:absolute;
+  right:10px;
+  top:8px;
+  background:var(--main);
+  color:var(--maintxt);
+  padding:10px 15px;
+  border-radius:30px;
+  display: inline-block;
+}
+
 .rodape {
   width: 100%;
   position: fixed;
