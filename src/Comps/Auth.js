@@ -25,6 +25,11 @@ class Auth extends React.Component {
 
         const element4 = document.getElementById("linkcadastro");
         element4.classList.remove("selectauth");
+
+        this.setState({
+            usuario_login: '',
+            senha_login: ''
+        })
     }
 
     mostraCadastro = () => {
