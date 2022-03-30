@@ -84,7 +84,7 @@ class Auth extends React.Component {
         if (this.state.usuario_cadastro === this.state.usuario_login &&
             this.state.senha_cadastro === this.state.senha_login) {
 
-                if (this.state.usuario_login === true && this.state.senha_login === true ) {
+                if (this.state.usuario_login !== "" && this.state.senha_login  !== "" ) {
                     window.location = "/listagem";
                 } else {
                     e.preventDefault();
