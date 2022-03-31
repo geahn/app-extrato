@@ -1,5 +1,5 @@
 import React from "react";
-import Menu from "./Menu"
+//import Contas from "./Contas";
 
 class Listagem extends React.Component{
     constructor() {
@@ -64,7 +64,44 @@ class Listagem extends React.Component{
 
         return(
             <div>
-                <Menu valortotal={this.converterMoeda(valorTotal)}/>
+                <nav>
+                    <ion-icon size="large" id="menuhamb" name="menu-sharp"
+                      onclick="document.getElementById('meumenu').style.left = '0px'">
+                    </ion-icon>
+                    <div className="logoapp logomini"></div>
+                    <div id="meumenu">
+                        <div className="boxed">
+                            <ion-icon size="large" id="xfechar" name="close"
+                              onclick="document.getElementById('meumenu').style.left = '-350px'">
+                            </ion-icon>
+
+                            <span className="menusaldo">
+                                VALOR TOTAL<br />
+                                <b>{this.converterMoeda(valorTotal)}</b>
+                            </span>
+
+                            <div className="btmenu">
+                                <button>
+                                    <ion-icon name="arrow-redo"></ion-icon>
+                                    Contas a pagar
+                                </button>
+
+                                <button>
+                                    <ion-icon name="arrow-undo"></ion-icon>
+                                    Contas a receber
+                                </button>
+                            </div>
+                        </div>
+                        <a href="/" className="sair">
+                            Sair <ion-icon name="log-out"></ion-icon>
+                        </a>
+                    </div>
+
+
+                    <div className="valortotal">
+                        <span>Saldo: </span><b>{this.converterMoeda(valorTotal)}</b>
+                    </div>
+                </nav>
 
                 <div>
                     <table border="0">
