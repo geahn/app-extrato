@@ -63,7 +63,6 @@ hr {
 }
 
 .boxed {
-  position:relative;
   width: calc(100% - 60px);
   margin: 15px;
   padding: 15px;
@@ -123,7 +122,7 @@ lottie-player {
 }
 
 .card {
-  max-width: 1080px;
+  max-width: 1050px;
   width: calc(100% - 30px);
   padding: 15px;
   margin: 0 auto;
@@ -131,6 +130,8 @@ lottie-player {
   display: block;
   border-radius: 5px;
   border-bottom: 4px solid var(--main);
+  margin: 0 20px;
+  display: inline-table;
 }
 
 .card-mini {
@@ -155,6 +156,13 @@ lottie-player {
 
 .m5 {
   margin: 100px auto 10px !important;
+}
+
+h1 {
+text-transform: uppercase;
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
 }
 
 .logoapp {
@@ -249,6 +257,11 @@ button[type="Submit"] ion-icon {
   margin-top: -6px;
 }
 
+.cancelar {
+  background:var(--sec) !important;
+  margin: 0 10px !important;
+}
+
 .inputicon {
   position: relative;
 }
@@ -300,6 +313,10 @@ table {
   width: calc(100% - 20px);
   max-width: 1080px;
   margin: 70px auto 10px;
+}
+
+thead tr {
+  background-color: #f5f5f5;
 }
 
 td, th {
@@ -358,10 +375,10 @@ th {
 }
 
 #xfechar {
-  color:white;
+  color: white;
   position: absolute;
   right: 15px;
-  top: -5px;
+  top: 10px;
   transition: left .7s;
 }
 
@@ -407,18 +424,21 @@ th {
 }
 
 .sair {
-  color: #0b4b96;
+  color: black;
   background: white;
-  position: absolute;
-  bottom: 65px;
-  left: 40%;
-  font-weight: bold;
+  font-weight: 600;
   text-decoration: none;
   padding: 10px 15px;
-  border-radius: 7px;
+  border-radius: 10px;
+  margin: 5px;
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  text-transform: uppercase;
 }
 
 .sair ion-icon {
+  color:#0c4c96;
   position: relative;
   top:2px;
 }

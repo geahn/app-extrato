@@ -1,10 +1,12 @@
 import React from "react";
-//import Contas from "./Contas";
+import Contas from "./Contas";
 
 class Listagem extends React.Component{
-    constructor() {
-        super();
-        this.state = { entradas: [
+    constructor(props) {
+        super(props);
+        this.state = { 
+            situacao: "", //contas a pagar ou a receber
+            entradas: [
             {
             desc: "Capital de Giro",
             horario: this.definirDataHora(),
@@ -20,6 +22,9 @@ class Listagem extends React.Component{
             }
             ]
         }
+        
+        this.contasPagar = this.contasPagar.bind(this);
+        this.contasReceber = this.contasReceber.bind(this);
     }
 
     addZero(numero){
@@ -52,6 +57,26 @@ class Listagem extends React.Component{
             return "valornegativo"
     }
 
+    contasPagar() {
+        this.setState({situacao: "pagar"})
+        this.exibirContas()
+    }
+
+    contasReceber() {
+        this.setState({situacao: "receber"})
+        this.exibirContas()
+    }
+
+    exibirContas() {
+        let elemento1 = document.getElementById("contas");
+        elemento1.className = "card card-mini m5";
+
+        let elemento2 = document.getElementById("tabela");
+        elemento2.className = "hide";
+
+        document.getElementById('meumenu').style.left = '-350px'
+    }
+
     render(){
         const valorTotal=(this.state.entradas.reduce((extrato,currentItem) =>  extrato = extrato + currentItem.valor , 0 ));
 
@@ -81,38 +106,44 @@ class Listagem extends React.Component{
                             </span>
 
                             <div className="btmenu">
-                                <button>
+
+                                <button onClick={this.contasPagar}>
                                     <ion-icon name="arrow-redo"></ion-icon>
                                     Contas a pagar
                                 </button>
 
-                                <button>
+                                <button onClick={this.contasReceber}>
                                     <ion-icon name="arrow-undo"></ion-icon>
                                     Contas a receber
                                 </button>
                             </div>
+                            <a href="/" className="sair">
+                                Sair <ion-icon name="power"></ion-icon>
+                            </a>
                         </div>
-                        <a href="/" className="sair">
-                            Sair <ion-icon name="log-out"></ion-icon>
-                        </a>
                     </div>
-
 
                     <div className="valortotal">
                         <span>Saldo: </span><b>{this.converterMoeda(valorTotal)}</b>
                     </div>
                 </nav>
 
-                <div>
+                <div id="tabela">
                     <table border="0">
+                      <thead>
                         <tr>
                             <td><b>Horário</b></td>
                             <td><b>Descrição</b></td>
                             <td><b>Valor</b></td>
                         </tr>
-                        {mapaExtrato}    
+                      </thead>
+                      <tbody>
+                        {mapaExtrato}   
+                      </tbody> 
                     </table>
                 </div>
+
+                <Contas situacao={this.state.situacao} />
 
             </div>
         )

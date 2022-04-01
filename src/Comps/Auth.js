@@ -63,8 +63,11 @@ class Auth extends React.Component {
             let elemento = document.getElementById("msgsucesso");
             elemento.className = "msgsucesso";
       
-            let removerClasse = document.getElementById("msgerro");
-            removerClasse.className = "msgerro hide";
+            let removerClasse1 = document.getElementById("msgerro");
+            removerClasse1.className = "msgerro hide";
+
+            let removerClasse2 = document.getElementById("msgerroLogin");
+            removerClasse2.className = "msgerroLogin hide";
 
             this.mostraLogin();
             
@@ -95,9 +98,12 @@ class Auth extends React.Component {
                     e.preventDefault();
                 }
             } else {
-                let elemento = document.getElementById("msgerroLogin");
-                elemento.className = "msgerro";
-
+                let elemento1 = document.getElementById("msgerroLogin");
+                elemento1.className = "msgerro";
+                
+                let elemento2 = document.getElementById("msgsucesso");
+                elemento2.className = "msgsucesso hide";
+                
                 e.preventDefault();
             }
     };
@@ -106,7 +112,7 @@ class Auth extends React.Component {
         return(
             <div className="boxed auth-tela">
                 <div className="logoapp m4"></div>
-                <div className="card card-mini m4">
+                <div className="card card-mini m1">
                     <div className="linksauth">
                         <span id="linklogin" className="selectauth"
                         onClick={this.mostraLogin}>
