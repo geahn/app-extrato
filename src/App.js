@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 // import Login from "./Comps/Login";
 // import Cadastro from "./Comps/Cadastro";
+import Teste from "./Comps/Teste";
 import Auth from "./Comps/Auth";
 import Listagem from "./Comps/Listagem";
 
@@ -14,6 +15,7 @@ class App extends React.Component {
           <Routes>
             <Route path="/" element={<Auth />} />
             <Route path="/listagem" element={<Listagem />} />
+            <Route path="/teste" element={<Teste />} />
           </Routes>
         </Router>
       </div>

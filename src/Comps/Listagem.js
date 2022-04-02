@@ -2,30 +2,21 @@ import React from "react";
 import Contas from "./Contas";
 
 class Listagem extends React.Component{
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
         this.state = { 
             situacao: "", //contas a pagar ou a receber
             entradas: [
-            {
-            desc: "Capital de Giro",
-            horario: this.definirDataHora(),
-            valor: 1000
-            },{
-            desc: "Devoluções",
-            horario: this.definirDataHora(),
-            valor: 480.60
-            },{
-            desc: "Gastos com Remédios",
-            horario: this.definirDataHora(),
-            valor: -22.17
-            }
+                {  valor: 1000, desc: "Capital de Giro", horario: this.definirDataHora()  }
             ]
         }
         
         this.contasPagar = this.contasPagar.bind(this);
         this.contasReceber = this.contasReceber.bind(this);
+        this.setContas = this.setContas.bind(this);
     }
+
+    // const [extrato, setExtrato] = useState({});
 
     addZero(numero){
         if (numero <= 9) 
@@ -75,6 +66,35 @@ class Listagem extends React.Component{
         elemento2.className = "hide";
 
         document.getElementById('meumenu').style.left = '-350px'
+    }
+
+    setContas(contaValor, contaDesc) {
+        contaValor = contaValor.replace(",", ".")
+        contaValor = contaValor.replace("R$", "")
+
+        if (this.state.situacao === "pagar") {
+            contaValor = -Math.abs(contaValor)
+        } else {
+            contaValor = Math.abs(contaValor)
+        }
+
+        // console.log("Valor a " + this.state.situacao + ": " + contaValor)
+        // console.log("Descrição: " + contaDesc)
+
+        this.setState(prevState => ({
+            entradas: [...prevState.entradas, { 
+                valor: contaValor,
+                desc: contaDesc,
+                horario: this.definirDataHora()
+             }]
+          }))
+        
+        // this.setState({
+        //     desc: contaDesc,
+        //     horario: this.definirDataHora(),
+        //     valor: contaValor
+        // }
+
     }
 
     render(){
@@ -143,7 +163,7 @@ class Listagem extends React.Component{
                     </table>
                 </div>
 
-                <Contas situacao={this.state.situacao} />
+                <Contas situacao={this.state.situacao} metodo={this.setContas} />
 
             </div>
         )
