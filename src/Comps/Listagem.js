@@ -121,7 +121,7 @@ class Listagem extends React.Component{
                             </ion-icon>
 
                             <span className="menusaldo">
-                                VALOR TOTAL<br />
+                                SALDO TOTAL<br />
                                 <b>{this.converterMoeda(valorTotal)}</b>
                             </span>
 
@@ -144,7 +144,8 @@ class Listagem extends React.Component{
                     </div>
 
                     <div className="valortotal">
-                        <span>Saldo: </span><b>{this.converterMoeda(valorTotal)}</b>
+                        <span>Saldo: </span>
+                        <b className={this.estiloPosNeg(valorTotal)}> {this.converterMoeda(valorTotal)}</b>
                     </div>
                 </nav>
 

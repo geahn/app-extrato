@@ -16,6 +16,9 @@ exibirExtrato = () => {
     let elemento2 = document.getElementById("contas");
     elemento2.className = "hide";
 
+    let elemento3 = document.getElementById("msgerro");
+    elemento3.className = "msgerro hide";
+
     this.limparInput();
 }
 
@@ -28,6 +31,9 @@ aoMudarDesc = (e) => {
 };
 
 addConta = (e) => {
+
+    this.validaDados(this.state.valor, this.state.desc)
+
     this.props.metodo(this.state.valor, this.state.desc)
     this.limparInput()
     this.exibirExtrato()
@@ -40,15 +46,31 @@ limparInput() {
     })
 }
 
+validaDados = (valor, desc) => {
+
+    if(valor === "" || desc === "") {
+        let elemento1 = document.getElementById("msgerro");
+        elemento1.className = "msgerro show";
+
+        this.preventDefault();
+    } else {
+        let elemento1 = document.getElementById("msgerro");
+        elemento1.className = "msgerro hide";
+    }
+    
+}
+
     render(){
         return(
             <div id="contas" className="hide">
                 <h1>Contas a {this.props.situacao}</h1>
                 <hr />
 
+                <div id="msgerro" className="msgerro hide">Preencha todos os campos!</div>
+
                 <div className="">
                     <input
-                        type="text"
+                        type="number"
                         id="conta_valor"
                         name="conta_valor"
                         placeholder="Valor"

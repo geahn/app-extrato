@@ -290,7 +290,7 @@ button[type="Submit"] ion-icon {
 }
 
 .show {
-  display: initial;
+  display: block;
 }
 
 .hide {
