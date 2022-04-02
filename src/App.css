@@ -248,6 +248,9 @@ button[type="Submit"] {
   padding: 15px;
   margin: 5px 0;
   width: auto;
+  filter:brightness(100%) contrast(100%);
+  transition: filter .2s;
+  cursor:pointer;
 }
 
 button[type="Submit"] ion-icon {
@@ -255,6 +258,10 @@ button[type="Submit"] ion-icon {
   position: relative;
   top: 5px;
   margin-top: -6px;
+}
+
+button[type="Submit"]:hover {
+  filter:brightness(115%) contrast(115%);
 }
 
 .cancelar {
@@ -372,6 +379,7 @@ th {
 
 #menuhamb {
   color:white;
+  cursor:pointer;
 }
 
 #xfechar {
@@ -379,6 +387,7 @@ th {
   position: absolute;
   right: 15px;
   top: 10px;
+  cursor:pointer;
   transition: left .7s;
 }
 
@@ -421,6 +430,12 @@ th {
   background: white;
   margin: 5px;
   padding: 10px;
+  border:4px solid transparent;
+  cursor:pointer;
+}
+
+.btmenu button:hover {
+  border:4px solid #0c4c96;
 }
 
 .sair {
@@ -435,12 +450,17 @@ th {
   text-align: center;
   font-size: 14px;
   text-transform: uppercase;
+  border:4px solid transparent;
 }
 
 .sair ion-icon {
   color:#0c4c96;
   position: relative;
   top:2px;
+}
+
+.sair:hover {
+  border:4px solid #0c4c96;
 }
 
 .rodape {
