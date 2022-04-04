@@ -469,7 +469,7 @@ th {
   background: #0c4a97;
   background: linear-gradient( 40deg, rgba(12, 74, 151, 1) 0%, rgba(0, 135, 111, 1) 50%, rgba(79, 181, 72, 1) 100% );
   font-weight: bold;
-  margin-top: 10px;
+  margin: 10px;
   padding: 10px 15px;
   border-radius: 5px;
   display: inline-block;
