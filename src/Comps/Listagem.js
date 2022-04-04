@@ -162,6 +162,7 @@ class Listagem extends React.Component{
                         {mapaExtrato}   
                       </tbody> 
                     </table>
+                    <div className="aviso_uso">Para adicionar uma conta a pagar ou receber, acesse o menu</div>
                 </div>
 
                 <Contas situacao={this.state.situacao} metodo={this.setContas} />

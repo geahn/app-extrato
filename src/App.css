@@ -463,6 +463,30 @@ th {
   border:4px solid #0c4c96;
 }
 
+.aviso_uso {
+  position:relative;
+  color: white;
+  background: #0c4a97;
+  background: linear-gradient( 40deg, rgba(12, 74, 151, 1) 0%, rgba(0, 135, 111, 1) 50%, rgba(79, 181, 72, 1) 100% );
+  font-weight: bold;
+  margin-top: 10px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.aviso_uso:before{
+  position: absolute;
+  content: " ";
+  width: 15px;
+  height: 15px;
+  background: #0a558f;
+  top: -4px;
+  left: 13px;
+  transform: rotate(45deg);
+  border-radius: 2px;
+}
+
 .rodape {
   width: 100%;
   position: fixed;
