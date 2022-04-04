@@ -473,6 +473,7 @@ th {
   padding: 10px 15px;
   border-radius: 5px;
   display: inline-block;
+  z-index: -1;
 }
 
 .aviso_uso:before{
