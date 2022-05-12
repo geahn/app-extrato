@@ -3,6 +3,18 @@ import React from "react";
 class Auth extends React.Component {
     constructor() {
         super();
+
+        var url = 'https://danielextrato.herokuapp.com/public_html/api/user/daniel';
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+            })
+            .catch(error => {
+                console.log('ERROR: ' + error.message);
+            })
+
         this.state = {
           usuario_cadastro: "",
           senha_cadastro: "",
@@ -10,6 +22,7 @@ class Auth extends React.Component {
           senha_login: ""
         };
       }
+      
 
       mostraLogin = () => {
         const element1 = document.getElementById("formlogin");
