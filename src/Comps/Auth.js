@@ -13,7 +13,7 @@ class Auth extends React.Component {
                 alert(data)
             })
             .catch(error => {
-                console.log('ERROR: ' + error.message);
+                console.log('ERRORdd: ' + error.message);
             })
 
         this.state = {
