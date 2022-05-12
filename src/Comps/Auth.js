@@ -1,4 +1,5 @@
 import React from "react";
+import cors from 'cors';
 
 class Auth extends React.Component {
     constructor() {
